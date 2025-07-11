@@ -23,6 +23,9 @@ public class GameApplication {
     public static void main(String[] args) {
         List<GameRecord> records = FileHandler.readRecordsFromFile(PATH);
 
+        System.out.println("Total play time: " +
+                GameService.getTotalPlayTime(records) + " hours");
+
         Genre topGenre = GameService.getTopGenreOrNull(records);
         if (topGenre == null) {
             System.out.println("Error null");
