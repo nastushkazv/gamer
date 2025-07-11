@@ -43,5 +43,11 @@ public class GameService {
                 .map(Map.Entry::getKey)
                 .toList();
     }
+
+    public static int getTotalPlayTime(List<GameRecord> records) {
+        return records.stream()
+                .mapToInt(GameRecord::getHoursSpent)
+                .sum();
+    }
 }
 
