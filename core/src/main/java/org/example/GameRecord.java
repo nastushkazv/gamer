@@ -1,11 +1,13 @@
+package org.example;
+
 import java.time.LocalDate;
 
 public class GameRecord {
-    private String title;
-    private Genre genre;
-    private LocalDate completionDate;
-    private int hoursSpent;
-    private int rating;
+    private final String title;
+    private final Genre genre;
+    private final LocalDate completionDate;
+    private final int hoursSpent;
+    private final int rating;
 
     public GameRecord(String title, Genre genre, LocalDate completionDate, int hoursSpent, int rating) {
         this.title = title;
