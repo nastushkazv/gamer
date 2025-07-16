@@ -19,7 +19,7 @@ package org.example;
 import java.util.List;
 
 public class GameApplication {
-    private static final String PATH = "C:\\Users\\User\\IdeaProjects\\gamer1\\data\\data.txt";
+    private static final String PATH = "C:\\Users\\User\\IdeaProjects\\gamer1\\cli\\src\\test\\resources\\test_data.txt";
 
     public static void main(String[] args) {
         List<GameRecord> records = FileHandler.readRecordsFromFile(PATH);

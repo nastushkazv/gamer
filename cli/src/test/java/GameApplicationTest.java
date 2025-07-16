@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class GameApplicationTest {
+public class  GameApplicationTest {
     @Test
     public void testGetTopGenre() {
         List<GameRecord> records = Arrays.asList(
