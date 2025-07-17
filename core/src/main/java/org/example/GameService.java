@@ -1,4 +1,7 @@
+package org.example;
+
 import java.time.Month;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -42,6 +45,22 @@ public class GameService {
                 .filter(entry -> entry.getValue() > 1)
                 .map(Map.Entry::getKey)
                 .toList();
+    }
+
+    public static int getTotalPlayTime(List<GameRecord> records) {
+        return records.stream()
+                .mapToInt(GameRecord::getHoursSpent)
+                .sum();
+    }
+
+    public static String getLongestGame(List<GameRecord> records) {
+        if (records == null || records.isEmpty()) {
+            return null;
+        }
+        return records.stream()
+                .max(Comparator.comparingInt(GameRecord::getHoursSpent))
+                .map(GameRecord::getTitle)
+                .orElse(null);
     }
 }
 

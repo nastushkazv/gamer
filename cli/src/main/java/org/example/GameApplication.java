@@ -15,13 +15,21 @@
 //2. В какой месяц, Иннокентий потратил больше время времени на игры.
 //3. Все игры, которые Иннокентий проходил больше 1 раза.
 
+package org.example;
 import java.util.List;
 
 public class GameApplication {
-    private static final String PATH = "C:\\Users\\User\\IdeaProjects\\gamer1\\data\\data.txt";
+  
+    private static final String PATH = "C:\\Users\\User\\IdeaProjects\\gamer1\\cli\\src\\test\\resources\\test.txt";
+
 
     public static void main(String[] args) {
         List<GameRecord> records = FileHandler.readRecordsFromFile(PATH);
+
+        System.out.println("Longest game: " + GameService.getLongestGame(records));
+
+        System.out.println("Total play time: " +
+                GameService.getTotalPlayTime(records) + " hours");
 
         Genre topGenre = GameService.getTopGenreOrNull(records);
         if (topGenre == null) {
