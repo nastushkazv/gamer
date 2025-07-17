@@ -49,6 +49,28 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.11</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <rules>
+                            <rule>
+                                <limit>
+                                    <minimum>0.5</minimum>
+                                </limit>
+                            </rule>
+                        </rules>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
